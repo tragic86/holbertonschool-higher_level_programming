@@ -8,9 +8,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
+
+        i = []
         if attrs is None:
             return self.__dict__
-        i = []
+
         for key, value in self.__dict__.items():
             if key in attrs:
                 i[key] = value
