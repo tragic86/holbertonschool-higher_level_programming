@@ -66,7 +66,7 @@ class Base:
             with open(filename, "r") as d:
                 mt_list = cls.from_json_string(d.read())
             for i, j in enumerate(mt_list):
-                mt_list[i] = cls.create(**mt_list[j])
+                mt_list[i] = cls.create(**mt_list[i])
         except:
             pass
 
