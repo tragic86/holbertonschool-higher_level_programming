@@ -63,7 +63,7 @@ class Base:
 
         filename = cls.__name__ + "json"
         try:
-            with open(filename, 'r', encoding='utf-8') as d:
+            with open(filename, 'r') as d:
                 mt_list = cls.from_json_string(d.read())
             for i, j in enumerate(mt_list):
                 mt_list[i] = cls.create(**mt_list[i])
