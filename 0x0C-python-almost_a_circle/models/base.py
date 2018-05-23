@@ -55,3 +55,19 @@ class Base:
             dumb_class = cls(1)
             dumb_class.update(**dictionary)
         return dumb_class
+
+    @classmethod
+    def load_from_file(cls):
+        """load file"""
+        mt_list = []
+
+        filename = cls.__name__ + 'json'
+        try:
+            with open(filename, 'r', encoding='utf-8') as d:
+                mt_list = cls.from_json_string(d.read())
+            for i, j in enumerate(mt_list):
+                mt_list[i] = cls.create(**mt_list[i])
+        except:
+            pass
+
+        return mt_list
