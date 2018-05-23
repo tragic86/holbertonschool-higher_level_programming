@@ -32,7 +32,7 @@ class Base:
         else:
             for i in range(len(list_objs)):
                 mt_list.append(cls.to_dictionary(list_objs[i]))
-            with open(filename, 'w') as d:
+        with open(filename, 'w') as d:
                 d.write(cls.to_json_string(mt_list))
 
     @staticmethod
@@ -40,7 +40,7 @@ class Base:
         """Return string"""
         m_list = []
         if json_string is None or len(json_string) == len(m_list):
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
