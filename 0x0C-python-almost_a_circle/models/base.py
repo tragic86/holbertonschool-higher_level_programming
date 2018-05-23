@@ -61,7 +61,7 @@ class Base:
         """load file"""
         mt_list = []
 
-        filename = cls.__name__ + 'json'
+        filename = cls.__name__ + "json"
         try:
             with open(filename, 'r', encoding='utf-8') as d:
                 mt_list = cls.from_json_string(d.read())
