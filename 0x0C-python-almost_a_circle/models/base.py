@@ -38,8 +38,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Return string"""
-        mt_list = []
-        if json_string is None or len(json_string) == len(mt_list):
+        m_list = []
+        if json_string is None or len(json_string) == len(m_list):
             return "[]"
         else:
             return json.loads(json_string)
