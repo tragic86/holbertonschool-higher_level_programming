@@ -11,8 +11,7 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3])
     """subquery"""
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name
-                LIKE 'N%'")
+    cur.execute("SELECT * FROM states where states.name like 'N%'")
 
     query_rows = cur.fetchall()
     for row in query_rows:
