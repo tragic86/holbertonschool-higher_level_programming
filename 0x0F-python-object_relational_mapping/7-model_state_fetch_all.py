@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """list all states"""
 
-
+import MySQLdb
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
-    session = sessionmaker(bind=engine)
-    state = session()
-    for s in state.query(State).order_by(State.id).all():
+    Session = sessionmaker(engine)
+    session = Session()
+    for state in session.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
-    state.close()
+    session.close()
