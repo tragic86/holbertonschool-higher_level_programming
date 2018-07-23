@@ -13,8 +13,9 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
-
-    state = session.query(state).filter(state.name == sys.argv[4]).first()
+    session = sessionmaker(bind=engine)
+    sesh = session()
+    state = sesh.query(state).filter(state.name == sys.argv[4]).first()
 
     if state:
         print('{}'.format(state.id))
