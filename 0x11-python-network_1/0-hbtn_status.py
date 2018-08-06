@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ script to get request"""
 
+
 import urllib.request
 
 
@@ -10,7 +11,7 @@ if __name__ == "__main__":
         html = response.read()
         code = html.decode('UTF-8')
 
-        print("Body response:")
-        print("\t- type: {}".format(type(html)))
-        print("\t- content: {}".format(html))
-        print("\t- uft8 content: {}".format(code))
+    print("Body response:")
+    print("\t- type: {}".format(type(html)))
+    print("\t- content: {}".format(html))
+    print("\t- uft8 content: {}".format(code))
